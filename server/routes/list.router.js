@@ -79,8 +79,7 @@ router.delete('/', (req,res) =>{
 
 //PUT to update false
 router.put('/', (req,res)=>{
-   
-    console.log('in put router updating to false', idToUpdate);
+
     let queryText = `UPDATE groceries SET "purchased" = false `;
     pool.query(queryText)
     .then(result =>{
