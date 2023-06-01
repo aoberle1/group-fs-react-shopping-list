@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ResetBtn from "../ResetBtn/ResetBtn";
 
 function ShoppingList (props) {
     console.log(props)
@@ -7,8 +8,7 @@ function ShoppingList (props) {
 
     return (
         <div id='shopping-list'>
-            <button>Reset</button>
-            <button>Clear</button>
+            <ResetBtn groceryList={props.groceryList}/>
             {props.groceryList.map(item => (
                 <div className='grocery-item' id={item.id}>
                     {item.item} 

@@ -29,7 +29,7 @@ function App() {
             <main>
                 <p>Under Construction...</p>
                 <PostFood getGroceryList={getGroceryList} />
-                <ShoppingList groceryList={groceryList}/>
+                <ShoppingList groceryList={groceryList} getGroceryList={getGroceryList}/>
             </main>
         </div>
     );
