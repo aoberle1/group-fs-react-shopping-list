@@ -1,13 +1,13 @@
 function ShoppingList (props) {
 
-    
+
     return (
 
-        <div class='shopping-list'>
+        <div>
             <button>Reset</button>
             <button>Clear</button>
             {props.groceryList.map(item => {
-                <div id={item.id} class='grocery-item'></div>
+                <div id={item.id}>{item.item}{item.quantity}{item.unit}</div>
             }
             )}
         </div>

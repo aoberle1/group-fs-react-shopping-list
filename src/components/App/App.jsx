@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import Header from '../Header/Header.jsx'
 import './App.css';
 import axios from 'axios';
+import ShoppingList from '../ShoppingList/ShoppingList';
 
 function App() {
 
