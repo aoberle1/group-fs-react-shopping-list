@@ -9,9 +9,10 @@ function ShoppingList (props) {
     return (
         <>
         <ResetBtn getGroceryList={props.getGroceryList}/>
+        <br></br>
         <div id='shopping-list'>
             {props.groceryList.map(item => (
-                    <ShoppingItem key={item.item} item={item} />
+                    <ShoppingItem key={item.item} item={item} getGroceryList={props.getGroceryList} />
             )
             )}
         </div>
