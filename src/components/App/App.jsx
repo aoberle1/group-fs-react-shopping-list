@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Header from '../Header/Header.jsx'
 import './App.css';
+import PostFood from '../PostFood/PostFood.jsx';
 
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
             
             
             <main>
-
+             <PostFood/>
             </main>
         </div>
     );
