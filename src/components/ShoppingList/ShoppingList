@@ -1,0 +1,17 @@
+function ShoppingList (props) {
+
+    
+    return (
+
+        <div class='shopping-list'>
+            <button>Reset</button>
+            <button>Clear</button>
+            {props.groceryList.map(item => {
+                <div id={item.id} class='grocery-item'></div>
+            }
+            )}
+        </div>
+    )
+}
+
+export default ShoppingList;
