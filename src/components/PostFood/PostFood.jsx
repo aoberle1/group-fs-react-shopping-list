@@ -8,7 +8,7 @@ function PostFood(props) {
     let [newFoodUnit, setNewFoodUnit] = useState('');
 
     const addFood = () => {
-        axios.post('/groceries', { name: newFoodName, quantity: newFoodQuantity, unit: newFoodUnit })
+        axios.post('/groceries', { item: newFoodName, quantity: newFoodQuantity, unit: newFoodUnit })
         .then(response => {
           // clear inputs
           setNewFoodName('');
