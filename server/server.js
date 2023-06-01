@@ -10,8 +10,12 @@ app.use(express.static('build'));
 /** ---------- EXPRESS ROUTES ---------- **/
 // Create your API routes in a separate file
 // and plug them in here with `app.use()`
+let listRouter = require('./routes/list.router');
+app.use('/groceries', listRouter);
+
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT,  () => {
     console.log('Listening on port: ', PORT);
 });
+
