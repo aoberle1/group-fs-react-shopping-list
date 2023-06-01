@@ -3,7 +3,8 @@ import React, {useState, useEffect} from 'react';
 import Header from '../Header/Header.jsx'
 import './App.css';
 import axios from 'axios';
-import ShoppingList from '../ShoppingList/ShoppingList';
+import ShoppingList from '../ShoppingList/ShoppingList.jsx';
+import PostFood from '../PostFood/PostFood.jsx';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
             <Header />
             <main>
                 <p>Under Construction...</p>
+                <PostFood getGroceryList={getGroceryList} />
                 <ShoppingList groceryList={groceryList}/>
             </main>
         </div>
