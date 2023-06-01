@@ -1,21 +1,41 @@
 import "./ShoppingItem.css";
-import { useState } from "react"
+import axios from 'axios';
 
-function ShoppingItem ({item}) {
+function ShoppingItem (props) {
+ let item = props.item;
 
-    const [buy, setBuy] = useState(false)
+    const setBuy = () =>{
+
+        axios.put(`/groceries/${item.id}`, {purchased: true})
+            .then(response =>{
+                props.getGroceryList();
+            }).catch(error=>{
+                console.log('problems',error);
+            })
+    }
+
+    const removeBtn = () =>{
+        axios.delete(`/groceries/${item.id}`)
+            .then(response =>{
+                props.getGroceryList();
+            }).catch(error=>{
+                console.log('removeBtn PROBLEMS', error);
+            })
+    }
 
 
     return (
 
         <div className='grocery-item' id={item.id}>
             {
-                buy ? (
+                item.purchased ? (
                     <div>
                     {item.item} 
                     <br></br> 
                     {item.quantity}
+                    &nbsp;
                     {item.unit}
+                    <br></br>
                     <br></br>
                     PURCHASED!!!
                     </div>
@@ -27,10 +47,10 @@ function ShoppingItem ({item}) {
                     &nbsp;
                     {item.unit}
                     <br></br>
-                    <button className='buy-btn' onClick={() => setBuy(!buy)}>
+                    <button className='buy-btn' onClick={() => setBuy()}>
                         Buy
                     </button>
-                    <button className='remove-btn'>Remove</button>
+                    <button className='remove-btn'onClick={()=> removeBtn()}>Remove</button>
                     </>
                 )
             }

@@ -5,7 +5,7 @@ function ResetBtn(prop){
         event.preventDefault();
         axios.put('/groceries')
             .then(response => {
-                getGroceryList();
+                prop.getGroceryList();
             }).catch(error =>{
                 console.log('Problems with the resetButton =>', error);
             })
