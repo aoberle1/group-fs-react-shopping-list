@@ -1,3 +1,4 @@
+import "./ShoppingItem.css";
 import { useState } from "react"
 
 function ShoppingItem ({item}) {
@@ -23,12 +24,13 @@ function ShoppingItem ({item}) {
                     {item.item} 
                     <br></br> 
                     {item.quantity}
+                    &nbsp;
                     {item.unit}
                     <br></br>
-                    <button onClick={() => setBuy(!buy)}>
+                    <button className='buy-btn' onClick={() => setBuy(!buy)}>
                         Buy
                     </button>
-                    <button>Remove</button>
+                    <button className='remove-btn'>Remove</button>
                     </>
                 )
             }
