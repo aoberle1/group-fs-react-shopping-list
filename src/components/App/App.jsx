@@ -26,10 +26,12 @@ function App() {
     return (
         <div className="App">
             <Header />
+            
+            
             <main>
                 <p>Under Construction...</p>
                 <PostFood getGroceryList={getGroceryList} />
-                <ShoppingList groceryList={groceryList}/>
+                <ShoppingList groceryList={groceryList} getGroceryList={getGroceryList}/>
             </main>
         </div>
     );
