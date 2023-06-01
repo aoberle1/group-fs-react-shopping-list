@@ -7,8 +7,10 @@ function ShoppingList (props) {
     const [buy, setBuy] = useState(false)
 
     return (
+        <>
+        <ResetBtn groceryList={props.groceryList}/>
         <div id='shopping-list'>
-            <ResetBtn groceryList={props.groceryList}/>
+            
             {props.groceryList.map(item => (
                 <div className='grocery-item' id={item.id}>
                     {item.item} 
@@ -23,6 +25,7 @@ function ShoppingList (props) {
             )
             )}
         </div>
+        </>
     )
 }
 
