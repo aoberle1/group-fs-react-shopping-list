@@ -1,5 +1,5 @@
 import axios from 'axios';
-function ResetBtn({getGroceryList}){
+function ResetBtn(prop){
 
     const resetButton = (event) =>{
         event.preventDefault();
@@ -11,11 +11,10 @@ function ResetBtn({getGroceryList}){
             })
     }
 
-    const clearButton = (event) =>{
-        event.preventDefault();
+    const clearButton = () =>{
         axios.delete('/groceries')
             .then(response =>{
-                getGroceryList();
+                prop.getGroceryList();
             }).catch(error =>{
                 console.log('Issues in our clearButton =>', error);
             })
