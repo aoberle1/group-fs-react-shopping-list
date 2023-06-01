@@ -2,7 +2,6 @@ function ShoppingList (props) {
 
 
     return (
-
         <div>
             <button>Reset</button>
             <button>Clear</button>
