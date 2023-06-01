@@ -64,4 +64,31 @@ router.delete('/:id', (req, res)=>{
         })
 })
 
+//DELETE all table
+router.delete('/', (req,res) =>{
+    let queryText = 'DELETE FROM "groceries"'
+    pool.query(queryText)
+    .then(result =>{
+        console.log('table deleted');
+        res.sendStatus(200);
+    }).catch(error =>{
+        console.log('error in delete all router', error)
+        res.sendStatus(500)
+    })
+})
+
+//PUT to update false
+router.put('/', (req,res)=>{
+   
+    console.log('in put router updating to false', idToUpdate);
+    let queryText = `UPDATE groceries SET "purchased" = false `;
+    pool.query(queryText)
+    .then(result =>{
+        res.sendStatus(200);
+    }).catch(error=>{
+        res.sendStatus(500);
+    })
+    });
+
+
 module.exports = router;
