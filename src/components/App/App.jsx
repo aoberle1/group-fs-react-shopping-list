@@ -12,6 +12,7 @@ function App() {
 
     const getGroceryList = () => {
         axios.get('/groceries').then(response => {
+            console.log('gettin some groceries');
             setGroceryList(response.data);
         }).catch(error => {
             console.log('error is:', error)

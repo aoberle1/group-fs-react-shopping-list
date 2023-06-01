@@ -3,13 +3,11 @@ import ShoppingItem from "../ShoppingItem/ShoppingItem";
 import ResetBtn from "../ResetBtn/ResetBtn";
 
 function ShoppingList (props) {
-    console.log(props)
-
-    const [buy, setBuy] = useState(false)
+    console.log(props);
 
     return (
         <>
-        <ResetBtn groceryList={props.groceryList}/>
+        <ResetBtn getGroceryList={props.getGroceryList}/>
         <div id='shopping-list'>
             
             {props.groceryList.map(item => (
